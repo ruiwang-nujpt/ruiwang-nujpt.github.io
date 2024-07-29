@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        @media only screen and (min-width: 1025px) {
+            .head{
+            width: 100%;
+            height: 360px;
+            display: flex;
+            border-bottom: 1px solid black;
+        }
+        .content{
+            width: 100%;
+            height: 120px;
+            border-bottom: 1px solid black;
+        }
+        .correspondence{
+            width: 100%;
+            height: 250px;
+            border-bottom: 1px solid black;
+        }
+        .news{
+            width: 100%;
+            border-bottom: 1px solid black;
+        }
+        .researsh{
+            width: 100%;
+            height: 90px;
+            border-bottom: 1px solid black;
+        }
+        .activities{
+            width: 100%;
+            height: 90px;
+            border-bottom: 1px solid black;
+        }
+        .interests {
+           
+            border-bottom: 1px solid black;
+        }
+        .interests_content{
+            display: flex;
+           
+        }
+        .interests h4{
+            height: 10%;
+            width: 100%;
+        }
+        .interests_text {
+            width: 60%;
+            height: 90%;
+        }
+        .interests_img {
+            width: 300px;
+            height: 300px;
+            padding-left:100px;
+          
+        }
+        .interests_img img{
+            width: 100%;
+            height: auto;
+        }
+        .researsh p{
+            font-weight: normal;
+        }
+        .foot{
+            width: 100%;
+            height: 10px;
+            font-weight: lighter;
+        }
+        #left {
+            width: 20%;
+            height: 85%;
+            margin-top: 20px;
+            margin-right: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #left img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+        #mid{
+            width: 20%;
+            
+        }
+        #right{
+            width: 50%;
+            
+        }
+        a {  
+            color: blue; /* 字体颜色为蓝色 */  
+            text-decoration: underline; /* 加下划线 */  
+        }
+        #school_log{
+            margin-top: 50px;
+            text-align: center;
+            height: 200px; /* 设置容器高度 */
+        }
+        #school_log img {
+            max-width: 48%;
+            max-height: 100%; /* 确保图片不超过容器高度 */
+            margin-right: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        li {  
+            margin-bottom: 15px; /* 添加10像素的行间距 */  
+            font-weight: bold;
+        }
+        table {  
+            width: 100%;  
+            border-collapse: collapse;  
+        }  
+        
+        th, td {  
+            padding: 8px;  
+            text-align: left;  
+            font-size: 14px;
+        }  
+        .td_bold{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .news li {
+        font-weight: normal;
+        }
+        .news span{
+            font-weight: bold;
+        }
+}
+@media only screen and (max-width: 600px) {
+    
+    body {
+        transform: scale(0.4); /* 缩小页面 */
+        transform-origin: top left; /* 设置缩放原点 */
+        width: 250%; /* 确保缩小后内容依然能填满页面 */
+        height: auto; /* 调整高度 */
+        overflow: auto; /* 隐藏滚动条 */
+    }
+
+    .head, .content, .correspondence, .news, .researsh, .activities, .interests, .foot {
+        height: auto; /* 调整高度 */
+        border-bottom: 1px solid black;
+    }
+
+    .head {
+        display: flex;
+        flex-direction: row; /* 垂直排列 */
+        gap: 10px; /* 中间加距离 */
+    }
+    
+    .head img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #left, #mid, #right {
+        width: 100%;
+    }
+
+    #left {
+        height: auto;
+        margin-right: 0;
+    }
+
+    #left img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* 居中对齐 */
+        padding-top: 5vh;
+    }
+
+    #right img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* 居中对齐 */
+    }
+
+    .interests_content {
+        display: flex;
+        flex-direction: row; /* 竖向排列 */
+    }
+
+    .interests h4, .interests_text, .interests_img {
+        width: 100%;
+    }
+
+    .interests_img {
+        height: auto;
+        padding-left: 0;
+    }
+
+    .interests_img img {
+        width: 100%;
+        height: auto;
+    }
+
+    a {  
+        color: blue; /* 字体颜色为蓝色 */  
+        text-decoration: underline; /* 加下划线 */  
+    }
+
+    #school_log {
+        height: auto; /* 设置容器高度 */
+    }
+
+    #school_log img {
+        max-width: 100%;
+        max-height: 100%; /* 确保图片不超过容器高度 */
+        margin-right: 0;
+        display: inline-block;
+     
+    }
+
+    li {  
+        margin-bottom: 15px; /* 添加10像素的行间距 */  
+        font-weight: bold;
+    }
+
+    table {  
+        width: 100%;  
+        border-collapse: collapse;  
+    }  
+
+    th, td {  
+        padding: 8px;  
+        text-align: left;  
+        font-size: 12px; /* 调整字体大小 */
+    }  
+
+    .td_bold {
+        font-weight: bold;
+        font-size: 14px; /* 调整字体大小 */
+    }
+
+    .news li {
+        font-weight: normal;
+    }
+
+    .news span {
+        font-weight: bold;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div id="left" >
+            <img src="./imgs/wr.jpg">
+        </div>
+        <div id="mid">
+            <h2>Rui WANG</h2>
+            <h2>(王睿)</h2>
+            <p style="font-weight: bold; ">Lecturer</p>
+            <p></p>
+            <p></p>
+            <p><a href="https://cs.njupt.edu.cn/" target="_blank" >School of Computer Science, </a></p>
+           
+            <p></p>
+            <p></p>
+            <p>
+            <a href="https://m.njupt.edu.cn/_s5/_t44/main.psp"target="_blank">Nanjing University of Posts</a></p>
+            <a href="https://m.njupt.edu.cn/_s5/_t44/main.psp"target="_blank">  and Telecommunications</a>,china
+            <p></p>
+            <p></p>
+            <p style="color: rgb(126, 71, 4);">[Academic Profile]:</p>
+            <a href="https://scholar.google.com/citations?user=vzjqZzsAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a>&nbsp;&nbsp;<a href="https://dblp.org/pid/06/2293-43.html" target="_blank">DBLP</a>
+        </div>
+        <div id="right">
+            <div id="school_log">  
+                <img src="./imgs/team-3.png"> 
+                <img  src="./imgs/log.png">
+                 
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div style="padding-top: 10px;">
+            <ul>
+                <li>Looking for highly motivated undergraduate or postgraduate students aiming to perform Bachelor or MSc thesis or to enroll in a  program (<a href="mailto:rui_wang@njupt.edu.cn">contact me</a>)</li>
+                <li>欢迎与我联系申请 <a href="https://m.njupt.edu.cn/_s5/_t44/main.psp"target="_blank">南京邮电大学</a> 全职研究生 (<a href="mailto:rui_wang@njupt.edu.cn">contact me</a>)</li>
+                <!-- <li>欢迎 少数民族高层次骨干人才计划、对口支援西部地区高校定向培养研究生计划 考生联系报考硕士研究生 (<a href="mailto:rui_wang@njupt.edu.cn">contact me</a>)</li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="interests">
+        <h4>Research Interests:</h4>
+        <div class="interests_content">
+            <div class="interests_text">
+                <div style="padding-left: 20px;">Currently, I am a lecturer of Computer Science at Nanjing University of Posts and Telecommunications. I Lead the <a href="./index.html" target="_blank" >TExt Analytics and Mining (TEAM)</a> research group at NJUPT. My research interests include text mining, natural language processing, machine learning, especially on Adversarial-neural Topic Modeling and Neural Topic Modeling. Before join in NJUPT,
+                     I got my Ph.D degree from <a href="https://palm.seu.edu.cn/zhangml/" target="_blank" >PAttern Learning and Mining (PALM)</a> Lab at Southeast University supervised by <a href="https://palm.seu.edu.cn/zhoudeyu/Home.html" target="_blank" >Prof. Deyu Zhou. </a> </div>
+                <div style="padding-left: 20px; margin-top: 10px; margin-bottom: 15px;">Most of my recent focus is on Neural Topic Modeling (NTM) and Adversarial-neural Topic Modeling (ATM) .  Neural Topic Modeling aims to mine semantic coherent topics/patterns from unlabeled texts (such as online reviews and social media posts) via deep generative neural networks or other textual representation learning paradigm. Obviously, Adversarial-neural Topic Modeling (ATM) is a special case of NTM, which is a novel topic modeling framework and mines topics with adversarial training by using the generator network to capture semantic patterns among texts. The right is the top-100 word cloud generated from my recent published papers.  </div>
+            </div>
+            <div class="interests_img">
+                <img src="./imgs/topic.jpg">
+            </div>
+        </div>
+        
+        
+    </div>
+ <div class="news">
+        <h4>News:</h4>
+            <ul>
+                <li>2024.07, Our paper “Bridging spherical mixture distributions and word semantic knowledge for neural topic modeling” has been accepted by <span>Expert Systems with Applications (ESWA).</span> </li>
+                <li>2024.05, Our paper “DCTM: Dual Contrastive Topic Model for identifiable topic extraction” is accepted by <span>Information Processing & Management (IPM).</span></li>
+                <li>2024.02, Our paper “MIT: Mutual Information Topic Model for Diverse Topic Extraction
+                    ” is accepted by <span>IEEE Transactions on Neural Networks and Learning Systems (TNNLS). </span></li>
+                <li>2023.09, Our paper “Variational Gaussian topic model with invertible neural projections” is accepted by <span>Neural Computing & Applications (NCA).</span>  </li>
+                
+            </ul>
+    </div>
+    <div class="correspondence">
+        <h4>Correspondence:</h4>
+        <div>
+            <table>  
+                <tr>  
+                    <td class="td_bold">Mail: </td>  
+                    <td>Rui WANG</td>  
+                    <td class="td_bold">Office:</td>  
+                    <td>535, 424, Computer Building, Xianlin Campus of Nanjing University of Posts and Telecommunications. </td>  
+            
+                </tr>  
+            
+                <tr>  
+            
+                    <td></td>  
+            
+                    <td>School of Computer Science</td>  
+            
+                    <td class="td_bold">Tel:</td>  
+            
+                    <td>+86-25-5209-0869</td>  
+            
+                </tr>  
+            
+                <tr>  
+            
+                    <td></td>  
+            
+                    <td>Nanjing University of Posts and Telecommunications</td>  
+            
+                    <td class="td_bold">Fax:</td>  
+            
+                    <td>+86-25-5209-0869</td>  
+            
+                </tr>  
+            
+                <tr>  
+            
+                    <td></td>  
+            
+                    <td>No.9, Wenyuan Road, Yadong New District </td>  
+            
+                    <td class="td_bold">URL:</td>  
+            
+                    <td><a>	http://palm.seu.edu.cn/zhangml/</a></td>  
+            
+                </tr>  
+            
+                <tr>  
+            
+                    <td></td>  
+            
+                    <td>Nanjing City zip code: 210023</td>  
+            
+                    <td class="td_bold">Email:</td>  
+            
+                    <td>rui_wang@njupt.edu.cn</td>  
+            
+                </tr>  
+    
+            </table>  
+        </div>
+    </div>
+    <div class="activities">
+        <h4>Activities:</h4>
+        <p style="padding-left: 20px;">I served as reviewer for journals, such as TNNLS, IPM, NCA, ESWA, FCS and Science China Information Sciences. </p>
+    </div>
+
+    <div class="foot">
+        <p>Last Modified: 2024-07-27</p>
+    </div>
+
+   
+    <script>
+        function adjustHeight() {
+            const foot = document.querySelector('.foot');
+            const body = document.body;
+            
+            if (window.innerWidth <= 600) {
+                // 计算 body 的总高度，包括 foot 的高度
+                const totalHeight = body.scrollHeight;
+                const footHeight = foot.scrollHeight;
+                
+                // 设置 body 的高度为 totalHeight - footHeight，以便能看到 foot 的顶部
+                body.style.height = (totalHeight / 0.4) + 'px';
+                body.style.maxHeight = 'calc(100vh - ' + (footHeight / 0.4) + 'px)';
+                body.style.overflow = 'auto';
+            } else {
+                // 重置 body 的高度和溢出设置，以适应桌面视图
+                body.style.height = 'auto';
+                body.style.maxHeight = 'none';
+                body.style.overflow = 'visible';
+            }
+        }
+    
+        window.addEventListener('resize', adjustHeight);
+        window.addEventListener('load', adjustHeight);
+    </script>
+   
+</body>
+</html>

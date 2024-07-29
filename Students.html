@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <style>
+        .title-three {
+            color: blue;
+            font-size: 24px;
+            text-align: center;
+        }
+        .xian {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, black, transparent);
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .table-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+        }
+        td {
+            text-align: center;
+            padding: 10px;
+        }
+        .tdimg img {
+            width: 125px; /* 固定宽度 */
+            height: 165px; /* 固定高度 */
+            border: 5px solid #f8f6f6; /* 边框颜色和大小 */
+            box-shadow: 0 4px 8px rgb(71, 69, 69); /* 阴影效果 */
+            border-radius: 8px; /* 圆角效果 */
+            object-fit: cover; /* 确保图片覆盖指定尺寸 */
+        }
+        a:visited {
+            color: rgb(69, 21, 228); /* 已访问链接的颜色 */
+        }
+        a:hover {
+            text-decoration: underline; /* 鼠标悬停时显示下划线 */
+        }
+        .student-card {
+            display: none;
+            text-align: center;
+        }
+        @media only screen and (max-width: 600px) {
+            table {
+                display: none;
+            }
+            .table-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                width: 90%;
+            }
+            .student-card {
+                display: block;
+            }
+            .tdimg img {
+                width: 100px; /* 调整图片大小 */
+                height: 130px; /* 调整图片大小 */
+            }
+            .info {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p class="title-three">Students</p>
+        <div class="xian"></div>
+        <div class="table-container">
+            <table class="st-one">
+                <tbody>
+                    <tr>
+                        <td class="tdimg"><img src="./imgs/students/csy.jpg" class="xk"></td>
+                        <td class="tdimg"><img src="./imgs/students/wya.jpg" class="xk"></td>
+                        <td class="tdimg"><img src="./imgs/students/rp.jpg" class="xk"></td>
+                        <td class="tdimg"><img src="./imgs/students/lx.jpg" class="xk"></td>
+                        <td class="tdimg"><img src="./imgs/students/ljh.jpg" class="xk"></td>
+                        <td class="tdimg"><img src="./imgs/students/lza.jpg" class="xk"></td>
+                    </tr>
+                    <tr>
+                        <td class="info"><a href="./students_html/csy.html" target="_blank" style="font-size:13px;">常舒予 (Ph.D 2022)</a></td>
+                        <td class="info"><a href="./students_html/wya.html" target="_blank" style="font-size:13px;">王延安 (M.SC 2022)</a></td>
+                        <td class="info"><a href="./students_html/rp.html" target="_blank" style="font-size:13px;">任鹏 (M.SC 2022)</a></td>
+                        <td class="info"><a href="./students_html/lx.html" target="_blank" style="font-size:13px;">刘星 (M.SC 2022)</a></td>
+                        <td class="info"><a href="./students_html/ljh.html" target="_blank" style="font-size:13px;">陆家豪 (M.SC 2023)</a></td>
+                        <td class="info"><a href="./students_html/lza.html" target="_blank" style="font-size:13px;">李子昂 (M.SC 2023)</a></td>
+                    </tr>
+                    <tr>
+                        <td class="tdimg"><img src="./imgs/students/zy.jpg" class="xk"></td>
+                        <td class="tdimg"><img src="./imgs/students/lxc.jpg" class="xk"></td>
+                        <td class="tdimg"><img src="./imgs/students/ssy.jpg" class="xk"></td>
+                        <td class="tdimg"><img src="./imgs/students/pzh.png" class="xk"></td>
+                        <td class="tdimg"><img src="./imgs/students/wdx.jpg" class="xk"></td>
+                    </tr>
+                    <tr>
+                        <td class="info"><a href="./students_html/zy.html" target="_blank" style="font-size:13px;">郑毅 (M.SC 2023)</a></td>
+                        <td class="info"><a href="./students_html/lxc.html" target="_blank" style="font-size:13px;">吕心诚 (M.SC 2023)</a></td>
+                        <td class="info"><a href="./students_html/ssy.html" target="_blank" style="font-size:13px;">孙士宇 (M.SC 2024)</a></td>
+                        <td class="info"><a href="./students_html/pzh.html" target="_blank" style="font-size:13px;">潘卓航 (M.SC 2024)</a></td>
+                        <td class="info"><a href="./students_html/wdx.html" target="_blank" style="font-size:13px;">王栋欣 (M.SC 2024)</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 移动端学生卡片 -->
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/csy.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/csy.html" target="_blank">常舒予 (Ph.D 2022)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/wya.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/wya.html" target="_blank">王延安 (M.SC 2022)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/rp.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/rp.html" target="_blank">任鹏 (M.SC 2022)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/lx.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/lx.html" target="_blank">刘星 (M.SC 2022)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/ljh.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/ljh.html" target="_blank">陆家豪 (M.SC 2023)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/lza.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/lza.html" target="_blank">李子昂 (M.SC 2023)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/zy.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/zy.html" target="_blank">郑毅 (M.SC 2023)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/lxc.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/lxc.html" target="_blank">吕心诚 (M.SC 2023)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/ssy.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/ssy.html" target="_blank">孙士宇 (M.SC 2024)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/pzh.png" class="xk"></div>
+                <div class="info"><a href="./students_html/pzh.html" target="_blank">潘卓航 (M.SC 2024)</a></div>
+            </div>
+            <div class="student-card">
+                <div class="tdimg"><img src="./imgs/students/wdx.jpg" class="xk"></div>
+                <div class="info"><a href="./students_html/wdx.html" target="_blank">王栋欣 (M.SC 2024)</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

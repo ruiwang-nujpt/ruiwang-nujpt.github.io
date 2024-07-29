@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TExt Analytics and Mining Group</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            height: 100vh;
+        }
+        iframe {
+            height: 100vh;
+        }
+        .sidebar {
+            width: 15%;
+            background-color: rgb(0, 51, 102);
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .content {
+            width: 85%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px 10px 0px 10px;
+            text-decoration: none;
+            color: yellow;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-size: 1vw; /* 默认字体大小为1vw */
+            white-space: nowrap; /* 防止文字换行 */
+        }
+        .sidebar a.active {
+            text-decoration: underline;
+            color: rgb(249, 249, 250); /* 选中时的文字颜色 */
+        }
+        @media only screen and (max-width: 600px) {
+            .sidebar a {
+                display: block;
+                padding: 10px 10px 10px 0px;
+                text-decoration: none;
+                color: yellow;
+                margin-bottom: 10px;
+                border-radius: 4px;
+                font-size: 2vw; /* 默认字体大小为2vw */
+                white-space: nowrap; /* 防止文字换行 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <a href="Home.html" target="content-frame">Home</a>
+        <a href="Course.html" target="content-frame">Course</a>
+        <a href="Publication.html" target="content-frame">Publication</a>
+        <a href="Resources.html" target="content-frame">Resources</a>
+        <a href="Students.html" target="content-frame">Students</a>
+    </div>
+    <div class="content">
+        <iframe name="content-frame" src="Home.html" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll(".sidebar a");
+            
+            // 添加点击事件监听器
+            links.forEach(link => {
+                link.addEventListener("click", function() {
+                    // 移除所有链接的 active 类
+                    links.forEach(l => l.classList.remove("active"));
+                    // 为当前点击的链接添加 active 类
+                    this.classList.add("active");
+                });
+            });
+
+            // 页面加载时，根据 iframe 的 src 初始化 active 链接
+            const iframe = document.querySelector("iframe");
+            const iframeSrc = iframe.getAttribute("src");
+            links.forEach(link => {
+                if (link.getAttribute("href") === iframeSrc) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

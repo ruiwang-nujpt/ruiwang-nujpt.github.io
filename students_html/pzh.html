@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pzh</title>
+    <base target="_blank">
+  
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-size: 16px; /* 设置基本字体大小 */
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .left-div {
+            width: 15%;
+            height: 100%;
+            background-color: rgb(231, 230, 233);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mid-div {
+            flex: 1;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .right-div {
+            display: none;
+        }
+
+        .menu-category {
+            border-bottom: 1px solid gray;
+            font-size: 1.25rem;
+            margin-left: 1.25rem;
+            padding-bottom: 0.625rem;
+        }
+
+        .menu-item {
+            margin-left: 1.25rem;
+        }
+
+        a:visited {
+            color: rgb(84, 84, 241);
+        }
+
+        #toptitle {
+            text-align: left;
+            margin-left: 0.625rem;
+            border-bottom: 3px double gray;
+        }
+
+        .head {
+            width: 100%;
+            height: 17.5rem;
+            display: flex;
+        }
+
+        #left {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .stu_photo {
+            width: 11.25rem;
+            height: 15rem;
+            padding-left: 2.5rem;
+        }
+
+        .stu_photo img {
+            width: 100%;
+            height: auto;
+        }
+
+        #mid {
+            width: 30%;
+            padding-left: 5rem;
+        }
+
+        #right {
+            width: 50%;
+        }
+
+        #mid div {
+            margin-bottom: 0.3125rem;
+        }
+
+        #school_log {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3.75rem;
+        }
+
+        .school_log_img {
+            width: 12.5rem;
+            height: 12.5rem;
+            overflow: hidden;
+            margin: 0 0.625rem;
+        }
+
+        .Biography {
+            
+        }
+
+        .small_title {
+            color: rgb(84, 84, 241);
+            font-size: 1.375rem;
+            margin-left: 1.25rem;
+            padding-bottom: 0.625rem;
+            border-bottom: 3px solid gray;
+        }
+
+        .school {
+            padding-left: 3.125rem;
+        }
+
+/* 媒体查询 */
+@media (max-width: 768px) {
+    .left-div {
+        width: 25%; /* 调整侧边栏宽度 */
+    }
+
+    .mid-div {
+        width: 75%; /* 调整主体内容宽度 */
+    }
+
+    body {
+        font-size: 10px; /* 调整字体大小 */
+    }
+
+    .menu-category {
+        font-size: 1rem;
+        margin-left: 0.625rem; /* 向左对齐 */
+    }
+
+    .menu-item {
+        margin-left: 0.625rem; /* 向左对齐 */
+    }
+
+    #toptitle h2 {
+        font-size: 1.5rem;
+    }
+
+    .small_title {
+        font-size: 1.25rem;
+    }
+
+    .school_log_img {
+        width: 100%; /* 图片宽度设为100% */
+        max-height: 8rem; /* 限制最大高度 */
+        height: auto; /* 保持宽高比 */
+    }
+
+    .stu_photo {
+        width: 8rem; /* 调整图片宽度 */
+        height: auto; /* 保持宽高比 */
+    }
+
+    #school_log {
+        flex-direction: column; /* 垂直排列 */
+    }
+
+    #school_log img {
+        width: 8rem; /* 图片宽度设为100% */
+        height: auto; /* 保持宽高比 */
+        margin-top: 1rem; /* 图片间距 */
+    }
+
+    .head {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        margin-right: 0.5rem; /* 减小与mid的间距 */
+    }
+
+    #mid {
+        width: 50%;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    #right {
+        width: 25%;
+        margin-left: 1rem; /* 增加与mid的间距 */
+    }
+}
+
+@media (max-width: 480px) {
+    .left-div {
+        width: 26%; /* 调整侧边栏宽度 */
+    }
+
+    .mid-div {
+        width: 74%; /* 调整主体内容宽度 */
+    }
+
+    body {
+        font-size: 7px; /* 调整字体大小 */
+    }
+
+    .menu-category {
+        font-size: 0.875rem;
+        margin-left: 0.625rem; /* 向左对齐 */
+    }
+
+    .menu-item {
+        margin-left: 0.625rem; /* 向左对齐 */
+    }
+
+    #toptitle h2 {
+        font-size: 1.25rem;
+    }
+
+    .small_title {
+        font-size: 1rem;
+    }
+    .school_log_img {
+        width: 5rem; /* 增大图片宽度 */
+        height: auto; /* 保持宽高比 */
+    }
+    .school_log_img img {
+        width: 100%; /* 图片宽度设为100% */
+        max-height: 5rem; /* 限制最大高度 */
+        height: auto; /* 保持宽高比 */
+    }
+    
+
+    .stu_photo {
+        width: 6rem; /* 调整图片宽度 */
+        height: auto; /* 保持宽高比 */
+    }
+
+    #school_log {
+        flex-direction: column; /* 垂直排列 */
+    }
+
+    #school_log img {
+        width: 10rem; /* 调整图片宽度 */
+        height: auto; /* 保持宽高比 */
+        margin-top: 0.5rem; /* 图片间距 */
+    }
+
+    .head {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        height: 12rem;
+        font-size: 6px;
+    }
+
+    #left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 26%;
+        margin-right: 2rem; /* 减小与mid的间距 */
+    }
+
+    #mid {
+        width: 48%;
+        margin-left: 0.5rem; /* 增加与mid的间距 */
+        text-align: left;
+    }
+
+    #right {
+        width: 26%;
+        margin-left: 0rem; /* 增加与mid的间距 */
+        margin-top: -2rem;
+    }
+}
+
+
+
+    </style>
+</head>
+<body style="margin: 0;">
+<div class="container">
+    <div class="left-div">
+        <div class="menu1">
+            <div class="menu-category" style="padding-top: 2.3125rem;">Links</div>
+            <div class="menu-item"><a href="../Students.html" target="blank">TEAM Members</a></div>
+            <div class="menu-item"><a href="https://m.njupt.edu.cn/_s5/_t44/main.psp">Nanjing University of Posts and Telecommunications</a></div>
+        </div>
+        <div class="menu2" style="margin-top: 1.25rem;">
+            <div class="menu-category">Blogs</div>
+            <div class="menu-item"><a href="https://github.com/1EM0NS" target="blank">Github</a></div>
+        </div>
+    </div>
+    <div class="mid-div">
+        <div id="toptitle">
+            <h2 style="color: rgb(22, 125, 222);">Zhuohang Pan</h2>
+        </div>
+        <div class="head">
+            <div id="left">
+                <img src="../imgs/students/pzh.png" class="stu_photo">
+            </div>
+            <div id="mid">
+                <div style="margin-top: 1.875rem;">潘卓航</div>
+                <div>ZhuohangPan</div>
+                <div style="font-weight: bold;">M.Sc.Student</div>
+                <a href="https://cs.njupt.edu.cn/" target="_blank">School of Computer Science,</a>
+                <p></p>
+                <a href="https://m.njupt.edu.cn/_s5/_t44/main.psp" target="_blank">Nanjing University of Posts and Telecommunications</a>
+                <p></p>
+                <div><span style="font-weight: bold;">Superviser:</span>&nbsp;&nbsp;<a
+                        href="../index.html">Wang rui
+                    </a></div>
+                <div><span style="font-weight: bold;">Email:</span>&nbsp;&nbsp;<a
+                        href="mailto:ziang_li@njupt.edu.cn"></a></div>
+            </div>
+            <div id="right">
+                <div id="school_log">
+                    <div class="school_log_img">
+                        <img src="../imgs/team-3.png"
+                             style="max-width: 100%; max-height: 100%; width: auto; height: auto; padding-top: 0.625rem;">
+                    </div>
+                    <div class="school_log_img">
+                        <img src="../imgs/log.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Biography">
+            <div class="small_title">Biography</div>
+            <div style="padding-left: 2.5rem;">
+                <p>2024.09 ~ Now</p>
+                <p class="school">M.Sc, School of Computer Science, Nanjing University of Posts and Telecommunications, China
+                    </p>
+                    <p>2020.10 ~ 2024.06</p>
+                    <p class="school">B.E, Department of School of Electronic and Electrical Engineering, Shanghai University Of Engineering Science,China</p>
+            </div>
+        </div>
+        <div class="Research Interests">
+            <div class="small_title">Research Interests</div>
+            <div style="padding-left: 1.25rem;">
+                <ul>
+                    <li>Natural Language Processing</li>
+                    <li>Computer Vision</li>
+                    <li>Machine Learning</li>
+                    <li>Data Mining</li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="Selected Publications">
+            <div class="small_title">Selected Publications</div>
+            <div style="padding-left: 1.25rem;">
+                <ul>
+                    <li>Shuyu Chang, Zhenqi Shi, Chaorun Sun, Haiping Huang, Xingchen Liu, Fu Xiao. Privacy-Enhanced
+                        Frequent Sequence Mining and Retrieval for Personalized Behavior Prediction. IEEE Transactions
+                        on Information Forensics and Security, 2024.
+                    </li>
+                </ul>
+            </div>
+        </div>-->
+        <div class="Awards"> 
+            <div class="small_title">Awards</div>
+            <div style="padding-left: 1.25rem;">
+                <ul>
+                    <li>Outstanding graduates in Shanghai,2024</li>
+                    <li>Outstanding graduates of Shanghai University of Engineering Science,2024</li>
+                  </ul>
+            </div>
+        </div>
+        <div class="Correspondence">
+            <div class="small_title">Correspondence</div>
+            <div style="padding-left: 1.25rem;">
+                <p style="font-weight: bold; padding-left:1.25rem">Email</p>
+                <p class="school"></p>
+                <p style="font-weight: bold; padding-left:1.25rem">Laboratory</p>
+                <p class="school">School of Computer Science, Nanjing University of Posts and Telecommunications.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const stopScrollingAt = document.querySelector('.Correspondence');
+
+        function disableScroll(event) {
+            if (window.scrollY + window.innerHeight > stopScrollingAt.offsetTop + stopScrollingAt.offsetHeight) {
+                window.scrollTo(0, stopScrollingAt.offsetTop + stopScrollingAt.offsetHeight - window.innerHeight);
+                event.preventDefault();
+            }
+        }
+
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            window.addEventListener('scroll', disableScroll, { passive: false });
+        }
+    });
+</script>
+</body>
+</html>
